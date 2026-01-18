@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f2f4c" />
+    <title>Sprite Clicker</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Sprite Clicker</h1>
+        <p class="app__subtitle">Tap or press Space to advance.</p>
+      </header>
+
+      <section class="stage">
+        <canvas id="canvas" width="400" height="400" aria-label="Sprite stage"></canvas>
+      </section>
+
+      <section class="hud">
+        <div class="hud__count" id="count">0 / 100</div>
+        <progress id="progress" max="100" value="0"></progress>
+        <div class="hud__message" id="message">Tap or press Space.</div>
+        <button id="reset" type="button">Reset</button>
+      </section>
+
+      <section class="notes">
+        <h2>Assets</h2>
+        <p>Optional files (drop into <code>assets/</code>):</p>
+        <ul>
+          <li><code>sprite.jpg</code> (sprite sheet, 3 rows x 4 cols)</li>
+          <li><code>background.jpg</code> (background image)</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
