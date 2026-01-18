@@ -1,0 +1,133 @@
+:root {
+  --ink: #0f2f4c;
+  --accent: #cb7d2b;
+  --accent-2: #e8d8b9;
+  --paper: #f6f2e8;
+  --stage: #ffffff;
+  --shadow: rgba(15, 47, 76, 0.25);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top, #f4e7c9 0%, #f6f2e8 45%, #e9efe6 100%);
+}
+
+.app {
+  width: min(900px, 92vw);
+  margin: 0 auto;
+  padding: 32px 0 48px;
+  display: grid;
+  gap: 24px;
+}
+
+.app__header {
+  text-align: center;
+}
+
+.app__header h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin: 0 0 6px;
+  letter-spacing: 1px;
+}
+
+.app__subtitle {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.stage {
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #fdfaf3, #efe7d7);
+  box-shadow: 0 24px 50px var(--shadow);
+}
+
+canvas {
+  width: min(640px, 84vw);
+  height: auto;
+  border-radius: 12px;
+  background: var(--stage);
+  border: 2px solid rgba(15, 47, 76, 0.2);
+}
+
+.hud {
+  display: grid;
+  gap: 12px;
+  align-items: center;
+  justify-items: center;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: var(--paper);
+  border: 1px solid rgba(15, 47, 76, 0.15);
+}
+
+.hud__count {
+  font-size: 1.3rem;
+  letter-spacing: 0.8px;
+}
+
+progress {
+  width: min(320px, 80vw);
+  height: 16px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 47, 76, 0.3);
+}
+
+progress::-webkit-progress-bar {
+  background: #f2e8d2;
+}
+
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, var(--accent), #b05c1e);
+}
+
+progress::-moz-progress-bar {
+  background: linear-gradient(90deg, var(--accent), #b05c1e);
+}
+
+.hud__message {
+  font-size: 1rem;
+}
+
+button {
+  border: none;
+  background: var(--ink);
+  color: white;
+  font-size: 1rem;
+  padding: 10px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  letter-spacing: 0.8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(15, 47, 76, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding-top: 18px;
+  }
+
+  .hud {
+    padding: 14px;
+  }
+}
